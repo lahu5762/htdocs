@@ -1,7 +1,7 @@
 <?php
     // connect to database
     include 'db.php';
-
+    
     // insert into movies (...) values (name, year, rating, (gID where gGenre like input))
     $sql_insert = "INSERT INTO movies(mName, mYear, mRating, mGenreID) 
     VALUES ('" . $_POST['movie_name'] . "', '" . $_POST['movie_year'] . "', 
