@@ -12,12 +12,16 @@
         <input type="number" name="movie_rating" min='1' max='5' step='0.5'><br>
         <!-- Dropdown menu for genres -->
         <label for='genres'>Genre:</label>
-        <select name='movie_genre' id='genres'>
-            <option value='Action/Adventure'>Action/Adventure</option>
-            <option value='Comedy'>Comedy</option>
-            <option value='Drama'>Drama</option>
-            <option value='Fantasy/Sci-Fi'>Fantasy/Sci-Fi</option>
-        </select><br>
+        <select name=“genre"> 
+            <?php 
+            include 'db.php'; //establish database connection script
+            $result = mysqli_query($link,"select gID, gGenre from genres"); 
+            while($row = mysqli_fetch_assoc($result)) { 
+            $genreid = $row["gID"];
+            $genrename = $row["gGenre"]; 
+            print "<option value='$genreid'>$genrename</option>"; 
+            }
+            ?> </select><br>
         <!-- Submit button -->
         <input type="submit" value="Submit">
     </form>
