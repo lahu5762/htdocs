@@ -22,7 +22,7 @@
         <input type="submit" value="Submit">
     </form>
     <form action="showmovies.php" method="POST">
-        <input type="submit" value="view database">
+        <input type="submit" value="View database">
     </form>
 
 </body>
